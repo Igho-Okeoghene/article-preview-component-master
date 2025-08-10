@@ -6,26 +6,29 @@
 .manrope-font {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500px;
+  font-weight: 500;
   font-style: normal;
 }
 .manrope-bigfont {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 700px;
+  font-weight: 700;
   font-style: normal;
 }
 body {
   background-color: hsl(210, 46%, 95%);
   height: 100vh;
+  display: flex;
 }
 .container {
-  width: 350px;
+  width: 360px;
   height: auto;
   border-radius: 10px;
   background-color: white;
   margin: 0 auto;
-  margin-top: 5rem;
+  /* margin-top: 4rem; */
+  align-self: center;
+  box-shadow: 10px 10px 5px 0px hsl(214, 17%, 51%);
 }
 #drawers {
   width: 100%;
@@ -79,7 +82,7 @@ h4 {
 .shareDetails {
   display: none;
   background-color: hsl(217, 19%, 35%);
-  padding: 1.8rem 2.5rem;
+  padding: 1rem 2.5rem;
   display: flex;
   justify-content: space-between;
   border-radius: 0 0 10px 10px;
@@ -98,8 +101,92 @@ h4 {
   padding-left: 18px;
 }
 .attribution {
-  padding-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
-.hidden-div {
+.attribution a {
+  font-size: 9px;
+}
+.hidden-div,
+.authorHidden {
   display: none;
+}
+#shadeIcon {
+  background-color: white;
+  border-radius: 50%;
+  width: 20px;
+  padding: 12px;
+}
+
+.socialmedia {
+  align-items: center; /* keeps social icons at natural height */
+}
+
+#darkicon {
+  align-self: center; /* keeps this one independent */
+}
+
+.socialIcons img {
+  width: 20px; /* lock their size so they won't stretch */
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    width: 850px;
+  }
+  .img {
+    width: 40%;
+  }
+  #drawers {
+    border-radius: 10px 0 0 10px;
+    height: 100%;
+  }
+  .right-part {
+    width: 60%;
+  }
+  .description {
+    padding: 3rem 3rem 2rem 3rem;
+  }
+  .authorDetails {
+    padding: 0 3.5rem 0 3rem;
+  }
+  .authorHidden {
+    display: flex;
+  }
+  h4 {
+    width: 11rem;
+  }
+  .attribution {
+    text-align: left;
+    padding: 0.8rem 3rem 0 3rem;
+  }
+  footer {
+    position: relative;
+  }
+  .shareDetails {
+    position: absolute;
+    right: -70px;
+    top: -65px;
+  }
+  #shareDetails::after {
+    content: "";
+    position: absolute;
+    bottom: -8px; /* Adjust arrow position */
+    left: 45%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid hsl(217, 19%, 35%);
+  }
+  #darkicon {
+    display: none;
+  }
+  .attribution {
+    display: block;
+    text-align: center;
+  }
 }
